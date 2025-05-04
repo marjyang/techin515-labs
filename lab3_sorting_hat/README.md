@@ -1,0 +1,15 @@
+# Discussion
+### Are all questions important to create the sorting hat? If you were to remove some questions to improve user experience, which questions would you remove and why?
+Not necessarily - while all questions contribute value, they are not equally informative. However, I wouldn't say the less informative questions like preferred pet or dream career are necessarily bad - since these add to the fun of the sorting hat which is important for user experience. If I had to remove some questions, though, I would consider removing question 8 ("how do you solve problems"), as it seems redundant after question 4 ("how do you face challenges"). Doing so would remove some cognitive load. Additionally I might consider removing question 5 ("how do friends describe you") as it's more second-hand perception which might not reflect the person accurately.
+
+### If you were to improve the sorting hat, what technical improvements would you make? Consider:
+Accuracy/efficiency:
+To improve the accuracy, I would train with much more data, as the current 30 samples and only 6 users is too few -  resulting in only 64% training accuracy. More data would improve generalization, thus accuracy. To improve efficiency, I would prune the decision tree to reduce the model size before porting it to the ESP32. Additionally, I might also test different models like Random Forest - for improved accuracy, overfitting, and feature importance - then distill it to a lightweight decision tree for deployment.
+
+Additional sensors/hardware: 
+To improve the user experience with added components, I would think about adding a back button to ensure users could change their answers if they wanted to reconsider. Additionally, some sort of sound output could add to the magical experience of the UX - this might be a small speaker announcing the results in the voice of the sorting hat from Harry Potter movies. Lastly, I would add a battery pack for portability.
+
+For sensors, if we wanted to get more creative with the Harry Potter theme, we could add a PPG sensor, where if the sensing value is high, the sorting hat could say something like "I can feel your heart racing." This would determine nervousness, which could also be taken into consideration to imply confidence of answers - feeding into the ML prediction.
+
+### Does decision tree remain suitable for your choice of new sensors? If yes, carefully justify your answer. If not, what ML model would you use and explain why.
+Yes - the choice of new hardware still alows a decision tree to be a suitable model, as long as the input data is structured. For example, a PPG sensor provides a simple numerical input which can be incorporated as an additional feature without significant modification. However, if the project became more complex, like if we added voice or motion data, then a decision tree would no longer be the best fit - for these, a neural netwrok would be appropriate to capture patterns over time. For the current vision with the added sensors and hardware, a pruned decision tree would be ideal and efficient.
