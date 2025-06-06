@@ -15,3 +15,5 @@ This repository contains all source code, models, training scripts, and document
 6. Flash the code to your ESP32S3 board
 7. Open the serial monitor to observe local inference and cloud fallback as you make the gestures
 
+## Data Flow
+<img width="1716" alt="dataflow_lab5" src="https://github.com/user-attachments/assets/2a1c7f8f-40a0-4be8-b745-7c581275eee9" />
